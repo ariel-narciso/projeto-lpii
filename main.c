@@ -47,6 +47,7 @@ int main(void) {
     
     printf("PRESSIONE QUALQUER TECLA PARA INICIAR O JOGO ... ");
     getchar();
+    getchar();
     
     do {
 
@@ -54,6 +55,7 @@ int main(void) {
    	    draw_scr(matriz, linhas, colunas);
 
    	    input = getchar();
+	    getchar(); // por causa do <ENTER>
 
    	    if (mover_heroi(matriz, input, linhas, colunas) ||
    	    	mover_inimigos(matriz, n, num_inimigos, linhas, colunas)) {
