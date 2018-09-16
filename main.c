@@ -167,66 +167,65 @@ int mover_heroi(char **field, char mov, int l, int c) {
 	{
 	    case '8':
 
-		    if (heroi.p.x > 0) {
+		if (heroi.p.x > 0) {
 
-                if (field[heroi.p.x - 1][heroi.p.y] == (char)INIMIGO) {
+                	if (field[heroi.p.x - 1][heroi.p.y] == (char)INIMIGO) {
                     
-                    field[heroi.p.x--][heroi.p.y] = '.';
-                    return (1);
-                }
+                		field[heroi.p.x--][heroi.p.y] = '.';
+                		return (1);
+                	}
 
-                field[heroi.p.x][heroi.p.y] = '.';
-                field[--heroi.p.x][heroi.p.y] = (char)HEROI;
-                printf("oie\n");
-            }
+                	field[heroi.p.x][heroi.p.y] = '.';
+                	field[--heroi.p.x][heroi.p.y] = (char)HEROI;
+		}
 
-			break;
+		break;
 
 		case '2':
 
-			if (heroi.p.x < l - 1) {
+		if (heroi.p.x < l - 1) {
 
-                if (field[heroi.p.x + 1][heroi.p.y] == (char)INIMIGO) {
+			if (field[heroi.p.x + 1][heroi.p.y] == (char)INIMIGO) {
 
-                    field[heroi.p.x++][heroi.p.y] = '.';
-                    return (1);
-                }
+			    field[heroi.p.x++][heroi.p.y] = '.';
+			    return (1);
+			}
 
-                field[heroi.p.x][heroi.p.y] = '.';
-                field[++heroi.p.x][heroi.p.y] = (char)HEROI;
-            }
+			field[heroi.p.x][heroi.p.y] = '.';
+			field[++heroi.p.x][heroi.p.y] = (char)HEROI;
+		}
 
-			break;
+		break;
 
 		case '4':
 
-            if (heroi.p.y > 0) {
+		if (heroi.p.y > 0) {
 
-                if (field[heroi.p.x][heroi.p.y - 1] == (char)INIMIGO) {
+			if (field[heroi.p.x][heroi.p.y - 1] == (char)INIMIGO) {
 
-                    field[heroi.p.x][heroi.p.y--] = '.';
-                    return (1);
-                }
+		    		field[heroi.p.x][heroi.p.y--] = '.';
+		    		return (1);
+			}
 
-                field[heroi.p.x][heroi.p.y] = '.';
-                field[heroi.p.x][--heroi.p.y] = (char)HEROI;
-            }
+			field[heroi.p.x][heroi.p.y] = '.';
+			field[heroi.p.x][--heroi.p.y] = (char)HEROI;
+		}
 
-			break;
+		break;
 
 		case '6':
 
-			if (heroi.p.y < c - 1) {
+		if (heroi.p.y < c - 1) {
 
-                if (field[heroi.p.x][heroi.p.y + 1] == (char)INIMIGO) {
+			if (field[heroi.p.x][heroi.p.y + 1] == (char)INIMIGO) {
 
-                    field[heroi.p.x][heroi.p.y++] = '.';
-                    return (1);
-                }
+			    field[heroi.p.x][heroi.p.y++] = '.';
+			    return (1);
+			}
 
-                field[heroi.p.x][heroi.p.y] = '.';
-                field[heroi.p.x][++heroi.p.y] = (char)HEROI;
-            }
+			field[heroi.p.x][heroi.p.y] = '.';
+			field[heroi.p.x][++heroi.p.y] = (char)HEROI;
+		}
 	}
 
     return (0);
@@ -249,7 +248,7 @@ struct Ponto *gerar_inimigos(char **matriz, int limite_x, int limite_y, int qtd_
         
         do {
 
-			(*(enemy + i)).x = rand() % limite_x;
+		(*(enemy + i)).x = rand() % limite_x;
         	(*(enemy + i)).y = rand() % limite_y;
 
         } while ((enemy[i].x < 3 && enemy[i].y < 3) ||
